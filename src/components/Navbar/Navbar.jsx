@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import "./navbar.scss"
 
 const Navbar = () => {
-
+const[open, setOpen] = useState(false)
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -18,7 +18,7 @@ const Navbar = () => {
             <KeyboardArrowDownIcon />
           </div>
           <div className="item">
-            <span>IND</span>
+            <span>INR</span>
             <KeyboardArrowDownIcon />
           </div>
           <div className="item">
@@ -51,13 +51,14 @@ const Navbar = () => {
             <SearchIcon/>
             <PersonOutlineOutlinedIcon/>
             <FavoriteBorderOutlinedIcon/>
-            <div className="cartIcon">
+            <div className="cartIcon" onClick = {() => setOpen(!open)}>
               <ShoppingCartOutlinedIcon/>
               <span>0</span>
             </div>
           </div>
         </div>
         </div>
+        {open && <Cart/>}
         </div>
   );
 }

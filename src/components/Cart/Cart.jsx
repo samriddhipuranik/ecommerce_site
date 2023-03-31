@@ -3,7 +3,8 @@ import "./cart.scss";
 
 const Cart = () => {
   return (
-    <div>Cart</div>
+    <div className='cart'>
+        Cart</div>
   )
 }
 
